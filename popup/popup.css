@@ -183,7 +183,7 @@ button#clear:hover {
     border: 2px solid #444444; /* Dark border for visibility */
     background-color: #2b2b2b; /* Same background color */
     color: #f1f1f1;
-    font-size: 8px; /* Very small font size */
+    font-size: 16px; /* Very small font size */
     font-weight: 300;
     max-height: 150px; /* Set a max height for the output box */
     overflow-y: scroll; /* Show scroll bar when content overflows */

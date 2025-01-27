@@ -25,6 +25,6 @@
         "activeTab"
     ],
     "host_permissions":[
-        "http://localhost:8000/"
+        "https://chrome-extension-backend-gvc2.onrender.com/"
     ]
 }

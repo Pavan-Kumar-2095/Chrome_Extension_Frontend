@@ -12,7 +12,6 @@
 const summarize = document.getElementById("summarize");
 const translateButton = document.getElementById("translate");
 const promptButton = document.getElementById("meaning");
-const infoButton = document.getElementById("information");
 const pika = document.getElementById("data");  // This is the input field
 const clear = document.getElementById("clear");
 const output = document.getElementById("output");
@@ -22,7 +21,7 @@ const copytoclipboard = document.getElementById("copytoclipboard");
 
 async function sendWordToServer(word,process) {
 
-      const result = await fetch(`http://localhost:8000/${process}`, { 
+      const result = await fetch(`https://chrome-extension-backend-gvc2.onrender.com/${process}`, { 
         method: 'POST',
         headers: {
           'Content-Type': 'application/json', // Important: tells the server you're sending JSON
@@ -61,12 +60,6 @@ promptButton.onclick = () => {
     sendWordToServer(val , "meaning");
 };
 
-// Event listener for 'Information' button
-infoButton.onclick = () => {
-    const val = pika.value;
-    console.log("Information clicked", val);
-    sendWordToServer(val , "Information");
-};
 
 clear.onclick=()=>{
     pika.value = "";
