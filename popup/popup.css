@@ -1,0 +1,210 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212; /* Dark background for a sleek, moody look */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.pop {
+    background: #1e1e1e; /* Very dark gray background for the popup */
+    padding: 40px;
+    width: 350px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7); /* Deep shadow for a floating effect */
+    text-align: center;
+    border: 2px solid #333333; /* Subtle dark gray border */
+    border-radius: 8px; /* Smooth edges */
+    transform: translateY(-50px);
+    animation: popIn 1s ease-out forwards;
+}
+
+/* Animation for the pop container */
+@keyframes popIn {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    color: #bbbbbb; /* Light gray text color for the header */
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: fadeIn 1s ease-out 0.3s forwards;
+}
+
+/* Fade-in animation for h1 */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 30px;
+    border: 2px solid #444444; /* Dark gray border for input field */
+    background-color: #2b2b2b; /* Dark gray background for input */
+    color: #f1f1f1;
+    font-size: 18px;
+    font-weight: 300;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-out 0.5s forwards;
+}
+
+/* Fade-up animation for the input field */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+input[type="text"]:focus {
+    border-color: #777777; /* Slightly lighter gray for focus */
+    background-color: #333333;
+    outline: none;
+}
+
+button {
+    background: #444444; /* Dark gray background for buttons */
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    margin: 10px 0;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-out 0.7s forwards;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7); /* Subtle glowing shadow for depth */
+}
+
+button:hover {
+    background: #555555; /* Slightly lighter gray on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.8); /* Slightly stronger glow */
+}
+
+button:focus {
+    outline: none;
+    background: #666666; /* Even lighter gray for focus */
+    color: #0a0a0a;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.9); /* Focus glow effect */
+}
+
+/* Button Color Variants */
+button#copytoclipboard {
+    background: #333333; /* Darker shade for the copy button */
+}
+
+button#summarize {
+    background: #444444; /* Neutral dark gray */
+}
+
+button#translate {
+    background: #555555; /* Light gray for variation */
+}
+
+button#meaning {
+    background: #666666; /* Subtle gray shade */
+}
+
+button#information {
+    background: #777777; /* Slightly lighter gray */
+}
+
+button#clear {
+    background: #888888; /* Very light gray */
+}
+
+/* Button Hover Effects */
+button#copytoclipboard:hover {
+    background: #444444;
+}
+
+button#summarize:hover {
+    background: #555555;
+}
+
+button#translate:hover {
+    background: #666666;
+}
+
+button#meaning:hover {
+    background: #777777;
+}
+
+button#information:hover {
+    background: #888888;
+}
+
+button#clear:hover {
+    background: #999999;
+}
+
+/* Output Box */
+.output-text {
+    width: 100%;
+    padding: 8px; /* Same padding as the input box */
+    margin-top: 10px;
+    border: 2px solid #444444; /* Dark border for visibility */
+    background-color: #2b2b2b; /* Same background color */
+    color: #f1f1f1;
+    font-size: 8px; /* Very small font size */
+    font-weight: 300;
+    max-height: 150px; /* Set a max height for the output box */
+    overflow-y: scroll; /* Show scroll bar when content overflows */
+    word-wrap: break-word; /* Wrap long words to prevent overflow */
+    border-radius: 8px; /* Rounded corners */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+/* Add styles for the scrollbar */
+.output-text::-webkit-scrollbar {
+    width: 8px; /* Set width of scrollbar */
+}
+
+.output-text::-webkit-scrollbar-thumb {
+    background-color: #555; /* Dark color for the scrollbar thumb */
+    border-radius: 4px; /* Rounded edges for scrollbar thumb */
+}
+
+.output-text::-webkit-scrollbar-track {
+    background-color: #222; /* Dark background for the scrollbar track */
+}
